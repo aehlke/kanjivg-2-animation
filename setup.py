@@ -9,8 +9,8 @@ setup(
         "the SVG animation standard."
     ),
     license='CC BY-SA 3.0',
-    packages=[
-        'kanjivg2animation',
+    scripts=[
+        'kanjivg2animation.py',
     ],
     install_requires=[
         'svg.path',
