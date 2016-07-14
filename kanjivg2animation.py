@@ -53,10 +53,10 @@ for filename in tqdm(os.listdir(KANJIVG_SVG_DIR),
         '<svg id="kvg-{}" class="kanjivg" width="106" height="126" '.format(
             filename[:-4]))
 
-    # #Thought: maybe make end animation last longer before repeat? Or maybe keep it permanent?
+    # Thought: maybe make end animation last longer before repeat? Or maybe keep it permanent?
 
     # Begin defining the svg, its components and their styles
-    svg_build_array.append("""xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" version="1.1" baseProfile="full"><defs><style type="text/css"><![CDATA[path.black{fill:none;stroke:black;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;}path.grey{fill:none;stroke:# ddd;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;}path.stroke{fill:none;stroke:black;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;}rect{fill:none;stroke:#555;stroke-width:2;} text{font-size:16px;font-family:Segoe UI Symbol,Cambria Math,DejaVu Sans,Symbola,Quivira,STIX,Code2000;-webkit-touch-callout:none;cursor:pointer;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select: none;}text:hover{color:#777;}#reset{font-weight:bold;}]]></style><marker id="markerStart" markerWidth="8" markerHeight="8" style="overflow:visible;"><circle cx="0" cy="0" r="1.5" style="stroke:none;fill:red;fill-opacity:0.5;"/></marker><marker id="markerEnd" style="overflow:visible;"><circle cx="0" cy="0" r="0.8" style="stroke:none;fill:blue;fill-opacity:0.5;"><animate attributeName="opacity" from="1" to="0" dur="3s" repeatCount="indefinite" /></circle></marker></defs>""")
+    svg_build_array.append("""xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" version="1.1" baseProfile="full"><defs><style type="text/css"><![CDATA[path.black{fill:none;stroke:black;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;}path.grey{fill:none;stroke:# ddd;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;}path.stroke{fill:none;stroke:black;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;}]]></style></defs>""")
 
     # First we draw the grey kanji strokes in the background, without any animations
     for a in dpath:
