@@ -11,6 +11,10 @@ dependencies:
   cache_directories:
     - kanjivg
 
+general:
+  artifacts:
+    - converted
+
 deployment:
   master:
     branch: master
