@@ -6,7 +6,6 @@ checkout:
 dependencies:
   cache_directories:
     - kanjivg
-    - "~/virtualenvs/venv-3.5.1/"
 
 general:
   artifacts:
