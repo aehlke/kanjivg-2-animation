@@ -15,10 +15,10 @@ def find_between(s, first, last):
         return ""
 
 
-#Iterate through each svg file in the kanji directory.
-for file in os.listdir("/kanji"):
+#Iterate through each svg file in the kanjivg directory.
+for file in os.listdir("/kanjivg"):
     #Our source and target files and directories
-    source_file = open("/kanji/" + file, 'r', encoding="utf8")
+    source_file = open("/kanjivg/" + file, 'r', encoding="utf8")
     target_file = open("/converted/" + file[:-4] + '-jlect.svg', 'w+', encoding="utf8")
 
     #The array that we will use to build the various parts comprising the svg
