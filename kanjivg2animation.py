@@ -23,6 +23,7 @@ for file in os.listdir(KANJIVG_SVG_DIR):
     #Our source and target files and directories
     source_file = open(KANJIVG_SVG_DIR + file, 'r', encoding='utf8')
     target_file = open('./converted/' + file[:-4] + '-jlect.svg', 'w+', encoding='utf8')
+    print source_file, target_file
 
     #The array that we will use to build the various parts comprising the svg
     svg_build_array = []
