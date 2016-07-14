@@ -90,28 +90,15 @@ for filename in tqdm(os.listdir(KANJIVG_SVG_DIR), mininterval=5, miniters=10):
         svg_build_array.append('</path>')
 
         #Given the length of the current path, calculate the amount of time we should add to 'i'. The next path will animate after that time.
-        if path_length < 20:
-            i += 0.9
-        elif path_length < 40:
-            i += 1.0
-        elif path_length < 45:
-            i += 1.1
-        elif path_length < 50:
-            i += 1.2
-        elif path_length < 55:
-            i += 1.3
-        elif path_length < 60:
-            i += 1.4
-        elif path_length < 70:
-            i += 1.5
-        elif path_length < 90:
-            i += 1.7
-        elif path_length < 100:
-            i += 1.8
-        elif path_length < 110:
-            i += 1.9
-        else:
-            i += 2.0 #TODO: REPLACE THESE WITH FORMULA? User-changeable speed?
+        MIN_DELAY = 0.9
+        MAX_DELAY = 2.0
+        SHORT_PATH_LENGTH = 20
+        LONG_PATH_LENGTH = 110
+        i = (
+            MIN_DELAY +
+            min(0, (path_length - SHORT_PATH_LENGTH) / LONG_PATH_LENGTH) *
+            (MAX_DELAY - MIN_DELAY)
+        )
 
     #Finish handling the svg
     svg_build_array.append('</svg>')
