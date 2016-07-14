@@ -13,7 +13,6 @@ setup(
         'kanjivg2animation',
     ],
     install_requires=[
-        'kanjivg',
         'svg.path',
     ],
     zip_safe=False,
