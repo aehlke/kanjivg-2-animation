@@ -89,7 +89,9 @@ for filename in tqdm(os.listdir(KANJIVG_SVG_DIR),
                 '<set attributeName="opacity" to="0" dur="{}s" />'.format(i))
 
         # Animate the black stroke after a specified duration (begin)
-        svg_build_array.append('<animate attributeName="stroke-dashoffset" from="' + str(stroke_length) + '" to="0" dur="1.8s" begin="' + str(i) + 's" fill="freeze" />')
+        svg_build_array.append(
+            '<animate attributeName="stroke-dashoffset" from="{}" to="0" dur="1.8s" begin="{}s" fill="freeze" />'.format(
+                stroke_length, i))
 
         # Finish handling the path
         svg_build_array.append('</path>')
