@@ -7,6 +7,10 @@ checkout:
     - git submodule sync
     - git submodule update --init
 
+dependencies:
+  cache_directories:
+    - kanjivg
+
 deployment:
   master:
     branch: master
