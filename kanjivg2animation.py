@@ -11,6 +11,7 @@ import sys
 from io import open
 
 from svg.path import parse_path
+from tqdm import tqdm
 
 
 #A function that allows you to retrieve a string between two specified strings
@@ -27,10 +28,10 @@ KANJIVG_SVG_DIR = './kanjivg/kanji/'
 
 
 #Iterate through each svg file in the kanjivg directory.
-for file in os.listdir(KANJIVG_SVG_DIR):
+for filename in tqdm(os.listdir(KANJIVG_SVG_DIR)):
     #Our source and target files and directories
-    source_file = open(KANJIVG_SVG_DIR + file, 'r', encoding='utf8')
-    target_file = open('./converted/' + file[:-4] + '-jlect.svg', 'w+', encoding='utf8')
+    source_file = open(KANJIVG_SVG_DIR + filename, 'r', encoding='utf8')
+    target_file = open('./converted/' + filename[:-4] + '-jlect.svg', 'w+', encoding='utf8')
 
     #The array that we will use to build the various parts comprising the svg
     svg_build_array = []
@@ -46,7 +47,7 @@ for file in os.listdir(KANJIVG_SVG_DIR):
     source_file.close()
 
     #Start building an array that contains the fragments of our svg
-    svg_build_array.append("<svg id=\"kvg-" + file[:-4] + "\" class=\"kanjivg\" width=\"106\" height=\"126\" ")
+    svg_build_array.append("<svg id=\"kvg-" + filename[:-4] + "\" class=\"kanjivg\" width=\"106\" height=\"126\" ")
 
     ##Thought: maybe make end animation last longer before repeat? Or maybe keep it permanent?
 

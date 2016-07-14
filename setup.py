@@ -14,6 +14,7 @@ setup(
     ],
     install_requires=[
         'svg.path',
+        'tqdm',
     ],
     zip_safe=False,
 )
