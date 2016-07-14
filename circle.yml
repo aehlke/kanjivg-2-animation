@@ -6,3 +6,9 @@ checkout:
   post:
     - git submodule sync
     - git submodule update --init
+
+deployment:
+  master:
+    branch: master
+    commands:
+      - ./kanjivg2animation.py
