@@ -28,7 +28,7 @@ KANJIVG_SVG_DIR = './kanjivg/kanji/'
 
 
 #Iterate through each svg file in the kanjivg directory.
-for filename in tqdm(os.listdir(KANJIVG_SVG_DIR), mininterval=10):
+for filename in tqdm(os.listdir(KANJIVG_SVG_DIR), mininterval=5, mininters=10):
     #Our source and target files and directories
     source_file = open(KANJIVG_SVG_DIR + filename, 'r', encoding='utf8')
     target_file = open('./converted/' + filename[:-4] + '-jlect.svg', 'w+', encoding='utf8')
