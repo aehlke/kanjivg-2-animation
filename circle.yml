@@ -19,4 +19,4 @@ deployment:
   master:
     branch: master
     commands:
-      - ./kanjivg2animation.py
+      - python kanjivg2animation.py
