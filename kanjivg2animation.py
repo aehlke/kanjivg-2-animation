@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 
-from __future__ import print_function, unicode_literals
+from __future__ import (
+    print_function,
+    unicode_literals,
+)
 
 import math
 import os
 import sys
+from io import open
 
 from svg.path import parse_path
 
@@ -27,8 +31,6 @@ for file in os.listdir(KANJIVG_SVG_DIR):
     #Our source and target files and directories
     source_file = open(KANJIVG_SVG_DIR + file, 'r', encoding='utf8')
     target_file = open('./converted/' + file[:-4] + '-jlect.svg', 'w+', encoding='utf8')
-    print(source_file)
-    print(target_file)
 
     #The array that we will use to build the various parts comprising the svg
     svg_build_array = []
